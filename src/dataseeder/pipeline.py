@@ -5,8 +5,7 @@ from dataseeder.seed.products import seed_products
 from dataseeder.seed.sales import seed_sales
 from dataseeder.supabase.config import settings
 
-
-def runner(n: int = 5):
+def runner(n: int = settings.RECORDS):
     if settings.SUPABASE_URL == "https://supabase_url.supabase" or settings.SUPABASE_SERVICE_ROLE_KEY == "service_key":
         raise ValueError("ERROR: Please set your SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the .env file.")
     
