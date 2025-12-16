@@ -1,0 +1,49 @@
+[project]
+name = "dataseeder"
+version = "0.1.0"
+description = "DataSeeder is a Python tool that generates and seeds synthetic test data into Supabase databases"
+authors = [
+    { name = "Jhosua Lascarro", email = "168266147+Jhosua-Lascarro@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "faker>=38.2.0",
+    "pandas>=2.3.3",
+    "pandera>=0.27.0",
+    "pydantic-settings>=2.12.0",
+    "supabase>=2.25.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.9",
+]
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "SIM",
+    "C4",
+    "DTZ",
+    "RUF",
+    "PD",
+]
+
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["etl"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
