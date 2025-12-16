@@ -61,10 +61,20 @@ make sync
 Create a `.env` file in the project root:
 
 ```env
-URL=https://your-project.supabase.co
-SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+RECORDS=100
 DRY_RUN=false
 ```
+
+**Configuration Options:**
+
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `SUPABASE_URL` | Your Supabase project URL | Yes | - |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key | Yes | - |
+| `RECORDS` | Number of records to generate per entity | No | `200` |
+| `DRY_RUN` | Test mode without database insertion | No | `false` |
 
 ## Usage
 
